@@ -30,7 +30,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
-    MediaPlayer player;
+    MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +61,26 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                releaseMediaPlayer();
                 int ids = getResources().getIdentifier(words.get(i).getVoice(),"raw",getPackageName());
-               player = MediaPlayer.create(NumbersActivity.this,ids);
-               player.start();
+               mMediaPlayer = MediaPlayer.create(NumbersActivity.this,ids);
+               mMediaPlayer.start();
                 Toast.makeText(NumbersActivity.this,words.get(i).getMiwokWord(),Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
+        }
     }
 }

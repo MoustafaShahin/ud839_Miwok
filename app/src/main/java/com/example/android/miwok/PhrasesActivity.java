@@ -29,7 +29,7 @@ public class PhrasesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phrases);
 
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus","phrase_where_are_you_going"));
         words.add(new Word("What is your name?", "tinnә oyaase'nә"));
         words.add(new Word("My name is...", "oyaaset..."));
         words.add(new Word("How are you feeling?", "michәksәs?"));

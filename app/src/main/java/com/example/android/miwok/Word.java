@@ -29,6 +29,13 @@ public class Word {
         voice = voi;
 
     }
+    public Word(String mdefault,String mmiwokword ,String voi){
+        defaultW = mdefault;
+        miwokWord = mmiwokword;
+
+        voice = voi;
+
+    }
 
     public String getDefaultTranslation() {
                return defaultW;
