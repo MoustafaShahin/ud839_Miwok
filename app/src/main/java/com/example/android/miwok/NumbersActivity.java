@@ -63,8 +63,8 @@ public class NumbersActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 releaseMediaPlayer();
                 int ids = getResources().getIdentifier(words.get(i).getVoice(),"raw",getPackageName());
-               mMediaPlayer = MediaPlayer.create(NumbersActivity.this,ids);
-               mMediaPlayer.start();
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this,ids);
+                mMediaPlayer.start();
                 Toast.makeText(NumbersActivity.this,words.get(i).getMiwokWord(),Toast.LENGTH_SHORT).show();
             }
         });

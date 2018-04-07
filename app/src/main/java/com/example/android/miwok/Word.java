@@ -7,21 +7,27 @@ import android.support.v4.content.ContextCompat;
  */
 
 public class Word {
+    //english word
     String defaultW;
+    //miwok word
     String miwokWord;
+    //voice file
     String voice = "-1";
+    //image id
     int resource_id = -1;
 
+    //default conatructor
     public Word(String mdefault,String mmiwokword){
         defaultW = mdefault;
         miwokWord = mmiwokword;
     }
+    // add img
     public Word(String mdefault,String mmiwokword , int img){
         defaultW = mdefault;
         miwokWord = mmiwokword;
         resource_id = img;
-
     }
+    // add img voi
     public Word(String mdefault,String mmiwokword , int img,String voi){
         defaultW = mdefault;
         miwokWord = mmiwokword;
@@ -29,12 +35,11 @@ public class Word {
         voice = voi;
 
     }
+    // add voice only
     public Word(String mdefault,String mmiwokword ,String voi){
         defaultW = mdefault;
         miwokWord = mmiwokword;
-
         voice = voi;
-
     }
 
     public String getDefaultTranslation() {
